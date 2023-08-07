@@ -38,14 +38,14 @@ public class apartments {
 	public int getWhichFloor() {
 		return whichFloor;
 	}
-	public void setWhichFloor(int newWhichFloor) {
-		whichFloor = newWhichFloor;
+	public void setWhichFloor(int NewWhichFloor) {
+		whichFloor = NewWhichFloor;
 	}
-	public int getMonthlyFee() {
+	public int GetMonthlyFee() {
 		return monthlyFee;
 	}
-	public void setMonthlyFee(int newMonthlyFee) {
-		monthlyFee = newMonthlyFee;
+	public void setMonthlyFee(int NewMonthlyFee) {
+		monthlyFee = NewMonthlyFee;
 	}
 	public int getNumberPerson() {
 		return numberPerson;
@@ -56,8 +56,8 @@ public class apartments {
 	public String getSpace() {
 		return space;
 	}
-	public void setSpace(String newSpace) {
-		space = newSpace;
+	public void setSpace(String NewSpace) {
+		space = NewSpace;
 	}
 	public int getBedroomNumber() {
 		return  bedroomNumber;

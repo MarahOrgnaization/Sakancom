@@ -2,12 +2,17 @@ package najah.edu.acceptance_tests;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.runner.RunWith;
 
 import classes.main;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import io.cucumber.junit.CucumberOptions.SnippetType;
 
 public class loginTest{
 	@Given(": I have a username and a password from the user\\(owner)")
