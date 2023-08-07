@@ -432,11 +432,35 @@ public class Main {
 		
 		public static boolean showHouse() {
 			for(int i=0;i<arrayHouses.size();i++) {
-				logger.log(Level.INFO,HOUSEID +arrayHouses.get(i).getId() );
+				logger.log(Level.INFO,HOUSEID );
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getId() );
 				logger.log(Level.INFO,HOUSEINF);
-				logger.log(Level.INFO,RESNAME +arrayHouses.get(i).getResidenceObj().getName()+LOCATION +arrayHouses.get(i).getResidenceObj().getLocation() +NUMFLOORS+arrayHouses.get(i).getResidenceObj().getNumberFloors()+HOWAPARTMENTS+arrayHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
-				logger.log(Level.INFO,NUMAPPARTMENT+arrayHouses.get(i).getApartmentsObj().getNumber()+WHATFLOOR+arrayHouses.get(i).getApartmentsObj().getWhichFloor()+HOWPEOPLE+arrayHouses.get(i).getApartmentsObj().getNumberPerson()+HOWSPACE+arrayHouses.get(i).getApartmentsObj().getSpace());
-				logger.log(Level.INFO,HOWFEES+arrayHouses.get(i).getApartmentsObj().getMonthlyFee()+ELEANDWAT+arrayHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity()+INTERNET+arrayHouses.get(i).getApartmentsObj().getFreeInternet()+CARPARK+arrayHouses.get(i).getResidenceObj().getAvailableParking()+ELEVATOR+arrayHouses.get(i).getResidenceObj().getElevatorAvailable());
+				logger.log(Level.INFO,RESNAME );
+				logger.log(Level.INFO,arrayHouses.get(i).getResidenceObj().getName());
+				logger.log(Level.INFO,LOCATION );
+				logger.log(Level.INFO,arrayHouses.get(i).getResidenceObj().getLocation());
+				logger.log(Level.INFO,NUMFLOORS);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getResidenceObj().getNumberFloors());
+				logger.log(Level.INFO,HOWAPARTMENTS);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
+				logger.log(Level.INFO,NUMAPPARTMENT);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getNumber());
+				logger.log(Level.INFO,WHATFLOOR);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getWhichFloor());
+				logger.log(Level.INFO,HOWPEOPLE);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getNumberPerson());
+				logger.log(Level.INFO,HOWSPACE);
+				logger.log(Level.INFO,arrayHouses.get(i).getApartmentsObj().getSpace());
+				logger.log(Level.INFO,HOWFEES);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getMonthlyFee());
+				logger.log(Level.INFO,ELEANDWAT);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity());
+				logger.log(Level.INFO,INTERNET);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getFreeInternet());
+				logger.log(Level.INFO,CARPARK);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getResidenceObj().getAvailableParking());
+				logger.log(Level.INFO,ELEVATOR);
+				logger.log(Level.INFO,"{0}",arrayHouses.get(i).getResidenceObj().getElevatorAvailable());
 			}
 			logger.log(Level.INFO,"***The array is empty***");
 			return true;
@@ -446,13 +470,20 @@ public class Main {
 		public static boolean  controlPanel(String userName) {
 			for(int i=0;i<advertisedHouses.size();i++) {
 				if(userName.equals(advertisedHouses.get(i).getOwnerObj().getName())) {
-					logger.log(Level.INFO,HOUSEID +advertisedHouses.get(i).getId() );
-					logger.log(Level.INFO,"Architecture name : " +advertisedHouses.get(i).getResidenceObj().getName() );
-					logger.log(Level.INFO,"The apartment is located on the floor : " +advertisedHouses.get(i).getResidenceObj().getNumberFloors() );
-					logger.log(Level.INFO,"This apartment is located on the floor:"+advertisedHouses.get(i).getApartmentsObj().getWhichFloor());
-					logger.log(Level.INFO,"It contains a number of bedrooms:"+advertisedHouses.get(i).getApartmentsObj().getBedroomNumber());
-					logger.log(Level.INFO,"Number of bathrooms:"+advertisedHouses.get(i).getApartmentsObj().getBathroomsNumber());
-					logger.log(Level.INFO,"balcony number:"+advertisedHouses.get(i).getApartmentsObj().getBalconyNumber());
+					logger.log(Level.INFO,HOUSEID);
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getId() );
+					logger.log(Level.INFO,"Architecture name : " );
+					logger.log(Level.INFO,advertisedHouses.get(i).getResidenceObj().getName() );
+					logger.log(Level.INFO,"The apartment is located on the floor : " );
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getNumberFloors() );
+					logger.log(Level.INFO,"This apartment is located on the floor:");
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getWhichFloor());
+					logger.log(Level.INFO,"It contains a number of bedrooms:");
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getBedroomNumber());
+					logger.log(Level.INFO,"Number of bathrooms:");
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getBathroomsNumber());
+					logger.log(Level.INFO,"balcony number:");
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getBalconyNumber());
 					logger.log(Level.INFO,"The tenants are:");
 				for(int k =0 ; k<getIdAndTennantlist().size() ; k++) {
 					if(getIdAndTennantlist().get(k).gethousingId() == advertisedHouses.get(i).getId()) {
@@ -492,9 +523,32 @@ public class Main {
 		public static boolean showAdvertisedHouses() {
 			for(int i=0;i<advertisedHouses.size();i++) {
 				logger.log(Level.INFO,HOUSEINF);
-				logger.log(Level.INFO,RESNAME +advertisedHouses.get(i).getResidenceObj().getName()+LOCATION +advertisedHouses.get(i).getResidenceObj().getLocation() +NUMFLOORS+advertisedHouses.get(i).getResidenceObj().getNumberFloors()+HOWAPARTMENTS+advertisedHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
-				logger.log(Level.INFO,NUMAPPARTMENT+advertisedHouses.get(i).getApartmentsObj().getNumber()+WHATFLOOR+advertisedHouses.get(i).getApartmentsObj().getWhichFloor()+HOWPEOPLE+advertisedHouses.get(i).getApartmentsObj().getNumberPerson()+HOWSPACE+advertisedHouses.get(i).getApartmentsObj().getSpace());
-				logger.log(Level.INFO,HOWFEES+advertisedHouses.get(i).getApartmentsObj().getMonthlyFee()+ELEANDWAT+advertisedHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity()+INTERNET+advertisedHouses.get(i).getApartmentsObj().getFreeInternet()+CARPARK+advertisedHouses.get(i).getResidenceObj().getAvailableParking()+ELEVATOR+advertisedHouses.get(i).getResidenceObj().getElevatorAvailable());
+				logger.log(Level.INFO,RESNAME );
+				logger.log(Level.INFO,advertisedHouses.get(i).getResidenceObj().getName());
+				logger.log(Level.INFO,LOCATION );
+				logger.log(Level.INFO,advertisedHouses.get(i).getResidenceObj().getLocation()); 
+				logger.log(Level.INFO,NUMFLOORS);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getNumberFloors());
+				logger.log(Level.INFO,HOWAPARTMENTS);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
+				logger.log(Level.INFO,NUMAPPARTMENT);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getNumber());
+				logger.log(Level.INFO,WHATFLOOR);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getWhichFloor());
+				logger.log(Level.INFO,HOWPEOPLE);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getNumberPerson());
+				logger.log(Level.INFO,HOWSPACE);
+				logger.log(Level.INFO,advertisedHouses.get(i).getApartmentsObj().getSpace());
+				logger.log(Level.INFO,HOWFEES);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getMonthlyFee());
+				logger.log(Level.INFO,ELEANDWAT);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity());
+				logger.log(Level.INFO,INTERNET);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getFreeInternet());
+				logger.log(Level.INFO,CARPARK);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getAvailableParking());
+				logger.log(Level.INFO,ELEVATOR);
+				logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getElevatorAvailable());
 			}
 			logger.log(Level.INFO,"***The array is empty***");
 			return true;
@@ -504,8 +558,10 @@ public class Main {
 		public static boolean watchingReservations() {
 			for(int i=0 ; i<getIdAndTennantlist().size() ; i++) {
 				
-				logger.log(Level.INFO, "housing Id is : "+getIdAndTennantlist().get(i).gethousingId());
-				logger.log(Level.INFO, "Who is the tenant : "+getIdAndTennantlist().get(i).getTenants());
+				logger.log(Level.INFO, "housing Id is : ");
+				logger.log(Level.INFO,"{0}",getIdAndTennantlist().get(i).gethousingId());
+				logger.log(Level.INFO, "Who is the tenant : ");
+				logger.log(Level.INFO,"{0}",getIdAndTennantlist().get(i).getTenants());
 			}
 			
 			return true;
@@ -516,8 +572,12 @@ public class Main {
 			logger.log(Level.INFO,"The available housing : ");
 			for(int i=0;i<advertisedHouses.size();i++) {
 				 if(advertisedHouses.get(i).getAvailabilityStatus()) {
-					 logger.log(Level.INFO,"name of Residence : " +advertisedHouses.get(i).getResidenceObj().getName()+" \nthe location of the Residence : " +advertisedHouses.get(i).getResidenceObj().getLocation() );
-					 logger.log(Level.INFO,"the number of the apartment : "+advertisedHouses.get(i).getApartmentsObj().getNumber());
+					logger.log(Level.INFO,"name of Residence : " );
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getName());
+					logger.log(Level.INFO," \nthe location of the Residence : " );
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getLocation() );
+					logger.log(Level.INFO,"the number of the apartment : ");
+					logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getNumber());
 				 } 
 			 }
 			
@@ -528,10 +588,34 @@ public class Main {
 			for(int i=0;i<advertisedHouses.size();i++) {
 				 if(advertisedHouses.get(i).getAvailabilityStatus()) {
 					 logger.log(Level.INFO,HOUSEINF);
-					 logger.log(Level.INFO,RESNAME +advertisedHouses.get(i).getResidenceObj().getName()+LOCATION +advertisedHouses.get(i).getResidenceObj().getLocation() +NUMFLOORS+advertisedHouses.get(i).getResidenceObj().getNumberFloors()+HOWAPARTMENTS+advertisedHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
-					 logger.log(Level.INFO,NUMAPPARTMENT+advertisedHouses.get(i).getApartmentsObj().getNumber()+WHATFLOOR+advertisedHouses.get(i).getApartmentsObj().getWhichFloor()+HOWPEOPLE+advertisedHouses.get(i).getApartmentsObj().getNumberPerson()+HOWSPACE+advertisedHouses.get(i).getApartmentsObj().getSpace());
-					 logger.log(Level.INFO,HOWFEES+advertisedHouses.get(i).getApartmentsObj().getMonthlyFee()+ELEANDWAT+advertisedHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity()+INTERNET+advertisedHouses.get(i).getApartmentsObj().getFreeInternet()+CARPARK+advertisedHouses.get(i).getResidenceObj().getAvailableParking()+ELEVATOR+advertisedHouses.get(i).getResidenceObj().getElevatorAvailable());
-					 logger.log(Level.INFO,"14-Image link for the apartment"+advertisedHouses.get(i).getApartmentsObj().getPhoto());
+					 logger.log(Level.INFO,RESNAME );
+					 logger.log(Level.INFO,advertisedHouses.get(i).getResidenceObj().getName());
+					 logger.log(Level.INFO,LOCATION );
+					 logger.log(Level.INFO,advertisedHouses.get(i).getResidenceObj().getLocation() );
+					 logger.log(Level.INFO,NUMFLOORS);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getNumberFloors());
+					 logger.log(Level.INFO,HOWAPARTMENTS);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
+					 logger.log(Level.INFO,NUMAPPARTMENT);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getNumber());
+					 logger.log(Level.INFO,WHATFLOOR);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getWhichFloor());
+					 logger.log(Level.INFO,HOWPEOPLE);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getNumberPerson());
+					 logger.log(Level.INFO,HOWSPACE);
+					 logger.log(Level.INFO,advertisedHouses.get(i).getApartmentsObj().getSpace());
+					 logger.log(Level.INFO,HOWFEES);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getMonthlyFee());
+					 logger.log(Level.INFO,ELEANDWAT);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity());
+					 logger.log(Level.INFO,INTERNET);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getApartmentsObj().getFreeInternet());
+					 logger.log(Level.INFO,CARPARK);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getAvailableParking());
+					 logger.log(Level.INFO,ELEVATOR);
+					 logger.log(Level.INFO,"{0}",advertisedHouses.get(i).getResidenceObj().getElevatorAvailable());
+					 logger.log(Level.INFO,"14-Image link for the apartment");
+							 logger.log(Level.INFO,advertisedHouses.get(i).getApartmentsObj().getPhoto());
 					 logger.log(Level.INFO,"** This house is available **");
 				 }
 			 }
@@ -561,12 +645,18 @@ public class Main {
 			 for ( int i=0; i <getTenantList().size(); i++ ) {
 			if(getTenantList().get(i).getName().equals(name)){
 				logger.log(Level.INFO," the tenat information is : ");
-				logger.log(Level.INFO,"Name : " + getTenantList().get(i).getName());
-				logger.log(Level.INFO,"phone : " + getTenantList().get(i).getPhone());
-				logger.log(Level.INFO,"Age : " + getTenantList().get(i).getAge());
-				logger.log(Level.INFO,"major : " + getTenantList().get(i).getMajor());
-				logger.log(Level.INFO,"he is a student  : " + getTenantList().get(i).getIsStudent());
-				logger.log(Level.INFO,"furniture : " + getTenantList().get(i).getFurniture());
+				logger.log(Level.INFO,"Name : " );
+				logger.log(Level.INFO,getTenantList().get(i).getName());
+				logger.log(Level.INFO,"phone : " );
+				logger.log(Level.INFO,getTenantList().get(i).getPhone());
+				logger.log(Level.INFO,"Age : " );
+				logger.log(Level.INFO,"{0}",getTenantList().get(i).getAge());
+				logger.log(Level.INFO,"major : " );
+				logger.log(Level.INFO,getTenantList().get(i).getMajor());
+				logger.log(Level.INFO,"he is a student  : " );
+				logger.log(Level.INFO,"{0}",getTenantList().get(i).getIsStudent());
+				logger.log(Level.INFO,"furniture : " );
+				logger.log(Level.INFO,getTenantList().get(i).getFurniture());
 
 			}
 			 }
@@ -581,8 +671,10 @@ public class Main {
 								if( i!=j ){
 									 if(getTenantList().get(j).getIsStudent()) {
 										 logger.log(Level.INFO, getTenantList().get(j).getName());
-										 logger.log(Level.INFO,"major :" + getTenantList().get(j).getMajor());
-										 logger.log(Level.INFO,  "phone :" + getTenantList().get(j).getPhone());
+										 logger.log(Level.INFO,"major :" );
+										 logger.log(Level.INFO,getTenantList().get(j).getMajor());
+										 logger.log(Level.INFO,  "phone :" );
+										 logger.log(Level.INFO,getTenantList().get(j).getPhone());
 									 }
 										}
 							
@@ -598,7 +690,8 @@ public class Main {
 		public  static boolean showFurniture(String username2) {
 			 for ( int i=0; i <getTenantList().size(); i++ ) {
 				 if (username2.equals(getTenantList().get(i).getName())){
-					 logger.log(Level.INFO,"furniture : " + getTenantList().get(i).getFurniture());
+					 logger.log(Level.INFO,"furniture : " );
+					 logger.log(Level.INFO,getTenantList().get(i).getFurniture());
 					 return true;
 				 }
 			 }
@@ -610,7 +703,8 @@ public class Main {
 				 if(getIdAndTennantlist().get(i).getTenants().equals(name) ) {
 						fee= advertisedHouses.get(i).getApartmentsObj().getMonthlyFee();
 						
-						logger.log(Level.INFO,"fee: " + fee);	
+						logger.log(Level.INFO,"fee: " );
+						logger.log(Level.INFO,"{0}",fee);	
 						logger.log(Level.INFO,"do you want to pay , Enter the letter Y=Yes or N=No only");	
 			 String aa=myInput.next();
 			 paymentt(aa,name);
@@ -622,7 +716,7 @@ public class Main {
 		public static boolean paymentt(String aa,String name){
 			switch(aa) {
 			 case "y":
-				 logger.log(Level.INFO,"fees payed successfully " + "\npayred date : ");
+				 logger.log(Level.INFO,"fees payed successfully \npayred date : ");
 				 for (int j=0; j<getTenantList().size();j++ ) {
 					 if (getTenantList().get(j).getName().equals(name)) {
 						 logger.log(Level.INFO,getTenantList().get(j).getPayDate());
@@ -654,8 +748,10 @@ public class Main {
 			for (int i=0 ; i<advertisedHouses.size() ; i++){
 			if (advertisedHouses.get(i).getId()==ID_House) {
 
-				logger.log(Level.INFO," Owner name is  : " +advertisedHouses.get(i).getOwnerObj().getName());
-				logger.log(Level.INFO," Owner phone number is  : " +advertisedHouses.get(i).getOwnerObj().getPhoneNumber());
+				logger.log(Level.INFO," Owner name is  : " );
+				logger.log(Level.INFO,advertisedHouses.get(i).getOwnerObj().getName());
+				logger.log(Level.INFO," Owner phone number is  : " );
+				logger.log(Level.INFO,advertisedHouses.get(i).getOwnerObj().getPhoneNumber());
 			}
 			} 
 			return true;
