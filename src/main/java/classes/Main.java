@@ -490,7 +490,8 @@ public class Main {
 						logger.log(Level.INFO,getIdAndTennantlist().get(k).getTenants());
 						for(int h=0 ; h<getTenantList().size() ; h++ ) {
 							if(getTenantList().get(h).getName().equals(getIdAndTennantlist().get(k).getTenants())) {
-								logger.log(Level.INFO,"\t"+getTenantList().get(h).getPhone());
+								logger.log(Level.INFO,"\t");
+								logger.log(Level.INFO,getTenantList().get(h).getPhone());
 							}
 						}
 					}
