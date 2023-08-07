@@ -6,14 +6,14 @@ public class owners {
 	
 	
 	private String name ;
-	private String PhoneNumber;
+	private String phoneNumber;
 	public owners() {};
 	
 	
-	public owners(String name , String PhoneNumber ) {
+	public owners(String name , String phoneNumber ) {
 		
 		this.name=name;
-		this.PhoneNumber=PhoneNumber;
+		this.phoneNumber=phoneNumber;
 	};
 	public String getName() {
 		return name ;
@@ -23,10 +23,10 @@ public class owners {
 	}
 	
 	public String getPhoneNumber() {
-		return PhoneNumber ;
+		return phoneNumber ;
 	}
 	public void SetPhoneNumber(String NewPhoneNumber) {
-		PhoneNumber = NewPhoneNumber;
+		phoneNumber = NewPhoneNumber;
 	}
 		
 
