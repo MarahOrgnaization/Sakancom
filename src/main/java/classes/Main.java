@@ -11,7 +11,7 @@ public class Main {
 	private static ArrayList<Tenant> tenantList = new ArrayList<Tenant>();
 	private static ArrayList <IdAndTennant> idAndTennantlist = new ArrayList<IdAndTennant>();
 
-	private static int CounterID=0; 
+	private static int counterId=0; 
 	private static String userType = "none" ;
 	static String username;
 	static int counter=0;
@@ -103,7 +103,7 @@ public class Main {
 		 	Apartments apartmentsObj =new Apartments() ;
 		 	Owners ownerOne = new Owners();
 		 	ownerOne.setName(username);
-			CounterID=CounterID+1;
+			counterId=counterId+1;
 			logger.log(Level.INFO,"The name of the building in which the apartment is located ?");
 			residenceObj.setName(myInput.next());
 
@@ -175,7 +175,7 @@ public class Main {
 			logger.log(Level.INFO,"Enter a picture of the apartment");
 			apartmentsObj.setPhoto(myInput.next());
 			
-			 House houseOne=new House(CounterID,residenceObj,apartmentsObj,ownerOne,true);
+			 House houseOne=new House(counterId,residenceObj,apartmentsObj,ownerOne,true);
 		 	return houseOne;
 	 }
 	 
@@ -234,11 +234,35 @@ public class Main {
 					 case 1:
 						String acc; 
 							 for(int i=0;i<arrayHouses.size();i++) {
-								 logger.log(Level.INFO,HOUSEID +arrayHouses.get(i).getId() );
+								 logger.log(Level.INFO,HOUSEID );
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getId() );
 								 logger.log(Level.INFO,HOUSEINF);
-								 logger.log(Level.INFO,RESNAME +arrayHouses.get(i).getResidenceObj().getName()+LOCATION +arrayHouses.get(i).getResidenceObj().getLocation() +NUMFLOORS+arrayHouses.get(i).getResidenceObj().getNumberFloors()+HOWAPARTMENTS+arrayHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
-								 logger.log(Level.INFO,NUMAPPARTMENT+arrayHouses.get(i).getApartmentsObj().getNumber()+WHATFLOOR+arrayHouses.get(i).getApartmentsObj().getWhichFloor()+HOWPEOPLE+arrayHouses.get(i).getApartmentsObj().getNumberPerson()+HOWSPACE+arrayHouses.get(i).getApartmentsObj().getSpace());
-								 logger.log(Level.INFO,HOWFEES+arrayHouses.get(i).getApartmentsObj().getMonthlyFee()+ELEANDWAT+arrayHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity()+INTERNET+arrayHouses.get(i).getApartmentsObj().getFreeInternet()+CARPARK+arrayHouses.get(i).getResidenceObj().getAvailableParking()+ELEVATOR+arrayHouses.get(i).getResidenceObj().getElevatorAvailable());
+								 logger.log(Level.INFO,RESNAME );
+								 logger.log( Level.INFO,arrayHouses.get(i).getResidenceObj().getName());
+								 logger.log(Level.INFO,LOCATION );
+								 logger.log(Level.INFO, arrayHouses.get(i).getResidenceObj().getLocation() );
+							 	 logger.log(Level.INFO,NUMFLOORS);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getResidenceObj().getNumberFloors());
+								 logger.log(Level.INFO,HOWAPARTMENTS);
+								 logger.log( Level.INFO,"{0}",arrayHouses.get(i).getResidenceObj().getNumberApartmentsFloor());
+								 logger.log(Level.INFO,NUMAPPARTMENT);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getNumber());
+								 logger.log(Level.INFO,WHATFLOOR);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getWhichFloor());
+								 logger.log(Level.INFO,HOWPEOPLE);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getNumberPerson());
+								 logger.log(Level.INFO,HOWSPACE);
+								 logger.log(Level.INFO,arrayHouses.get(i).getApartmentsObj().getSpace());
+								 logger.log(Level.INFO,HOWFEES);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getMonthlyFee());
+								 logger.log(Level.INFO,ELEANDWAT);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getFeesIncludeWaterElectricity());
+								 logger.log(Level.INFO,INTERNET);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getApartmentsObj().getFreeInternet());
+								 logger.log(Level.INFO, CARPARK);
+								 logger.log(Level.INFO,"{0}",arrayHouses.get(i).getResidenceObj().getAvailableParking());
+								 logger.log(Level.INFO,ELEVATOR);
+								 logger.log(Level.INFO,"{0}", arrayHouses.get(i).getResidenceObj().getElevatorAvailable());
 									
 								 logger.log(Level.INFO,"Enter y if you accept to add this house and n if you reject : ");
 									acc = myInput.next();
@@ -303,7 +327,8 @@ public class Main {
 
 								for(int i=0 ; i< advertisedHouses.size() ; i++) {
 									 if(advertisedHouses.get(i).getAvailabilityStatus() ) {
-										 logger.log(Level.INFO, advertisedHouses.get(i).getId()+" || ");
+										 logger.log(Level.INFO,"{0}", advertisedHouses.get(i).getId());
+										 logger.log(Level.INFO,	" || ");
 							  
 									 }}
 								Scanner input2 = new Scanner(System.in);
