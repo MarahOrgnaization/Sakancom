@@ -39,7 +39,7 @@ public class Main {
 	private static final String  LOCATION = " \n2-the location of the Residence : ";
 	private static final String  RESNAME = "1-name of Residence : ";
 	
-	public static void Main(String[] args) {
+	public static void Main() {
 		 
 		 fullTenantList();
 		 
@@ -205,7 +205,7 @@ public class Main {
 						int num = myInput.nextInt();
 						logger.log(Level.INFO,"Enter the new value");
 						String new_value =  myInput.next();
-						Modify_information(houseId,num,new_value);			 
+						modifyInformation(houseId,num,new_value);			 
 						break;
 				 case 3:
 					 showHouse();
@@ -320,7 +320,7 @@ public class Main {
 							 break;
 							 
 						 case 6 :
-							 ShowFurniture(username);
+							 showFurniture(username);
 							 break;
 						 case 7 :
 							 seeNeighbours(username);
@@ -348,7 +348,7 @@ public class Main {
 			return true;
 		}
 
-		public static boolean Modify_information(int houseId , int num , String new_value) {
+		public static boolean modifyInformation(int houseId , int num , String new_value) {
 			House houseOne = new House();
 			houseOne=arrayHouses.get(houseId-1);
 
@@ -570,7 +570,7 @@ public class Main {
 		}
 
 
-		public  static boolean ShowFurniture(String username2) {
+		public  static boolean showFurniture(String username2) {
 			 for ( int i=0; i <getTenantList().size(); i++ ) {
 				 if (username2.equals(getTenantList().get(i).getName())){
 					 logger.log(Level.INFO,"furniture : " + getTenantList().get(i).getFurniture());
