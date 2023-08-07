@@ -5,9 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import classes.House;
 import classes.Residence;
-import classes.apartments;
-import classes.main;
-import classes.owners;
+import classes.Apartments;
+import classes.Main;
+import classes.Owners;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -26,7 +26,7 @@ public class acceptAndReject {
 	@Then("add a house in ads and remove a house in ad requests.")
 	public void add_a_house_in_ads_and_remove_a_house_in_ad_requests() {
 		Residence residenceOne = new Residence("Hijjawi","Ramallah",4,4,true,true);
-		apartments objApartments=new apartments();
+		Apartments objApartments=new Apartments();
 		 
 	 	objApartments.setNumber(1);
 		objApartments.setWhichFloor(1);
@@ -40,9 +40,9 @@ public class acceptAndReject {
 		objApartments.setFreeInternet(true);
 		objApartments.setFeesIncludeWaterElectricity(true);
 	 
-	 owners ownerOne = new owners("mayar","0569902837");
+	 Owners ownerOne = new Owners("mayar","0569902837");
 	 House houseOne=new House(1,residenceOne,objApartments,ownerOne,true);
-		 assertTrue(main.acceptAndReject("y",houseOne));
+		 assertTrue(Main.acceptAndReject("y",houseOne));
 	}
 
 	@When("the administrator rejects the house request")
@@ -53,7 +53,7 @@ public class acceptAndReject {
 	@Then("remove a home from ad requests")
 	public void remove_a_home_from_ad_requests() {
 		Residence residenceTow = new Residence("Hijjawi","Ramallah",4,4,true,true);
-		apartments objApartments=new apartments();
+		Apartments objApartments=new Apartments();
 		 
 	 	objApartments.setNumber(1);
 		objApartments.setWhichFloor(1);
@@ -67,8 +67,8 @@ public class acceptAndReject {
 		objApartments.setFreeInternet(true);
 		objApartments.setFeesIncludeWaterElectricity(true);
 	 
-	 owners ownerOne = new owners("mayar","0569902837");
+	 Owners ownerOne = new Owners("mayar","0569902837");
 	 House houseTow=new House(1,residenceTow,objApartments,ownerOne,true);
-		 assertFalse(main.acceptAndReject("n",houseTow));
+		 assertFalse(Main.acceptAndReject("n",houseTow));
 	}
 }

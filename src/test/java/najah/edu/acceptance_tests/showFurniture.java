@@ -2,8 +2,8 @@ package najah.edu.acceptance_tests;
 
 import static org.junit.Assert.assertTrue;
 
-import classes.main;
-import classes.tenant;
+import classes.Main;
+import classes.Tenant;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
@@ -15,9 +15,9 @@ public class showFurniture {
 
 	@Then("View all added furniture")
 	public void view_all_added_furniture() {
-		tenant tenantOne=new tenant("mayar","0569902837",19,"enj",true,"12-4-2023");
-		main.tenantList.add(tenantOne);
-		assertTrue(main.ShowFurniture("mayar"));
+		Tenant tenantOne=new Tenant("mayar","0569902837",19,"enj",true,"12-4-2023");
+		Main.getTenantList().add(tenantOne);
+		assertTrue(Main.ShowFurniture("mayar"));
 	}
 
 

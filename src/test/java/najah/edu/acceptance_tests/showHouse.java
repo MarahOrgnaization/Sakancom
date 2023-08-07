@@ -2,7 +2,7 @@ package najah.edu.acceptance_tests;
 
 import static org.junit.Assert.assertTrue;
 
-import classes.main;
+import classes.Main;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,7 +20,7 @@ public class showHouse {
 
 	@Then("View all available homes information")
 	public void view_all_available_homes_information() {
-		 assertTrue(main.showHouse());
+		 assertTrue(Main.showHouse());
 	}
 
 }

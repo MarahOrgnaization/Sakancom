@@ -6,10 +6,10 @@ import static org.junit.Assert.assertTrue;
 import classes.House;
 import classes.IdAndTennant;
 import classes.Residence;
-import classes.apartments;
-import classes.main;
-import classes.owners;
-import classes.tenant;
+import classes.Apartments;
+import classes.Main;
+import classes.Owners;
+import classes.Tenant;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,9 +27,9 @@ public class tenantControlPanel {
 
 	@Then("Show tenant information")
 	public void show_tenant_information() {
-		tenant tenantOne=new tenant("mayar","0569902837",19,"enj",true,"12-4-2023");
-		main.tenantList.add(tenantOne);
-		assertTrue(main.showTenant("mayar"));
+		Tenant tenantOne=new Tenant("mayar","0569902837",19,"enj",true,"12-4-2023");
+		Main.getTenantList().add(tenantOne);
+		assertTrue(Main.showTenant("mayar"));
 	}
 
 	@Given("the tenant loged in")
@@ -45,7 +45,7 @@ public class tenantControlPanel {
 	@Then("show information about owner")
 	public void show_information_about_owner() {
 		Residence Residence3 = new Residence("Hijjawi","Ramallah",4,4,true,true);
-		apartments objApartments=new apartments();
+		Apartments objApartments=new Apartments();
 		 
 	 	objApartments.setNumber(1);
 		objApartments.setWhichFloor(1);
@@ -59,16 +59,16 @@ public class tenantControlPanel {
 		objApartments.setFreeInternet(true);
 		objApartments.setFeesIncludeWaterElectricity(true);
 	 
-	 owners ownerOne = new owners("mayar","0569902837");
+	 Owners ownerOne = new Owners("mayar","0569902837");
 	 House House3=new House(1,Residence3,objApartments,ownerOne,true);
-		 main.addHouse(House3, "owner");
-		 main.acceptAndReject("y",House3);
-		 assertTrue(main.bookAccommodation(4,"mayar"));
+		 Main.addHouse(House3, "owner");
+		 Main.acceptAndReject("y",House3);
+		 assertTrue(Main.bookAccommodation(4,"mayar"));
 		 IdAndTennant IdAndTennant1=new IdAndTennant(4,"mayar");
-		 main.idAndTennantlist.add(IdAndTennant1);
+		 Main.getIdAndTennantlist().add(IdAndTennant1);
 		 IdAndTennant IdAndTennant2=new IdAndTennant(1,"osama");
-		 main.idAndTennantlist.add(IdAndTennant2);
-		assertTrue(main.ShowOwnerInformation("mayar"));
+		 Main.getIdAndTennantlist().add(IdAndTennant2);
+		assertTrue(Main.ShowOwnerInformation("mayar"));
 	}
 
 	@When("the tenant want to show the rent")
@@ -79,7 +79,7 @@ public class tenantControlPanel {
 	@Then("show the rent and how to pay")
 	public void show_the_rent_and_how_to_pay() {
 		Residence Residence1 = new Residence("Hijjawi","Ramallah",4,4,true,true);
-		apartments objApartments=new apartments();
+		Apartments objApartments=new Apartments();
 		 
 	 	objApartments.setNumber(1);
 		objApartments.setWhichFloor(1);
@@ -93,15 +93,15 @@ public class tenantControlPanel {
 		objApartments.setFreeInternet(true);
 		objApartments.setFeesIncludeWaterElectricity(true);
 	 
-	 owners ownerOne = new owners("mayar","0569902837");
+	 Owners ownerOne = new Owners("mayar","0569902837");
 	 House houseOne=new House(1,Residence1,objApartments,ownerOne,true);
-		 main.addHouse(houseOne, "owner");
-		 main.acceptAndReject("y",houseOne);
-		 main.bookAccommodation(3,"mayar");
+		 Main.addHouse(houseOne, "owner");
+		 Main.acceptAndReject("y",houseOne);
+		 Main.bookAccommodation(3,"mayar");
 		 IdAndTennant IdAndTennant1=new IdAndTennant(3,"mayar");
-		 main.idAndTennantlist.add(IdAndTennant1);
-		 main.fullTenantList();
-		assertTrue(main.paymentt("y","mayar"));
+		 Main.getIdAndTennantlist().add(IdAndTennant1);
+		 Main.fullTenantList();
+		assertTrue(Main.paymentt("y","mayar"));
 	}
 
 }

@@ -21,7 +21,7 @@ public class addHouse {
 	public void add_the_house_in_the_house_array_list_of_this_owner() {
 		 Residence residenceOne = new Residence("Hijjawi","Ramallah",4,4,true,true);
 		 
-		 apartments objApartments=new apartments();
+		 Apartments objApartments=new Apartments();
 		 
 		 	objApartments.setNumber(1);
 			objApartments.setWhichFloor(1);
@@ -35,9 +35,9 @@ public class addHouse {
 			objApartments.setFreeInternet(true);
 			objApartments.setFeesIncludeWaterElectricity(true);
 		 
-		 owners ownerOne = new owners("mayar","0569902837");
+		 Owners ownerOne = new Owners("mayar","0569902837");
 		 House houseOne=new House(1,residenceOne,objApartments,ownerOne,true);
-	   assertTrue(main.addHouse(houseOne,"owner"));
+	   assertTrue(Main.addHouse(houseOne,"owner"));
 	}
 	@Given("The admin has entered the house information")
 	public void the_admin_has_entered_the_house_information() {
@@ -47,7 +47,7 @@ public class addHouse {
 	@Then("Add the house in the advertised houses arrayList")
 	public void add_the_house_in_the_advertised_houses_array_list() {
 		 Residence residenceOne = new Residence("Hijjawi","Ramallah",4,4,true,true);
-		 apartments objApartments=new apartments();
+		 Apartments objApartments=new Apartments();
 		 
 		 	objApartments.setNumber(1);
 			objApartments.setWhichFloor(1);
@@ -61,8 +61,8 @@ public class addHouse {
 			objApartments.setFreeInternet(true);
 			objApartments.setFeesIncludeWaterElectricity(true);
 		 
-		 owners ownerOne = new owners("mayar","0569902837");
+		 Owners ownerOne = new Owners("mayar","0569902837");
 		 House houseOne=new House(1,residenceOne,objApartments,ownerOne,true);
-	   assertTrue(main.addHouse(houseOne,"admin"));
+	   assertTrue(Main.addHouse(houseOne,"admin"));
 	}
 }

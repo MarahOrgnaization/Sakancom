@@ -4,9 +4,9 @@ import static org.junit.Assert.assertTrue;
 
 import classes.House;
 import classes.Residence;
-import classes.apartments;
-import classes.main;
-import classes.owners;
+import classes.Apartments;
+import classes.Main;
+import classes.Owners;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,7 +25,7 @@ public class ownerControlPanel {
 	@Then("Shows him the number of rooms, bathrooms, balcony, tenants and their information")
 	public void shows_him_the_number_of_rooms_bathrooms_balcony_tenants_and_their_information() {
 		Residence residenceOne = new Residence("Hijjawi","Ramallah",4,4,true,true);
-		apartments objApartments=new apartments();
+		Apartments objApartments=new Apartments();
 		 
 	 	objApartments.setNumber(1);
 		objApartments.setWhichFloor(1);
@@ -39,11 +39,11 @@ public class ownerControlPanel {
 		objApartments.setFreeInternet(true);
 		objApartments.setFeesIncludeWaterElectricity(true);
 	 
-	 owners ownerOne = new owners("mayar","0569902837");
+	 Owners ownerOne = new Owners("mayar","0569902837");
 	 House houseOne=new House(1,residenceOne,objApartments,ownerOne,true);
-		 main.acceptAndReject("y",houseOne);
-		 main.bookAccommodation(1,"mayar");
-		assertTrue(main.controlPanel("mayar"));
+		 Main.acceptAndReject("y",houseOne);
+		 Main.bookAccommodation(1,"mayar");
+		assertTrue(Main.controlPanel("mayar"));
 	}
 
 }
