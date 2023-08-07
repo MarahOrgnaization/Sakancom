@@ -7,14 +7,14 @@ public class tenant {
 	 private String major ;
 	 private boolean Student ;
 	 private String furniture= null ;
-	 private String payDate;
+	 private String PayDate;
 	 
     public String getPayDate() {
-		return payDate;
+		return PayDate;
 	}
 
-	public void setPayDate(String newPayDate) {
-		payDate = newPayDate;
+	public void setPayDate(String payDate) {
+		PayDate = payDate;
 	}
 
 	public boolean isPaid() {
@@ -34,7 +34,7 @@ public class tenant {
 		this.major = major;
 		this.Student = Student;
 		
-		this.payDate=PayDate;
+		this.PayDate=PayDate;
 	}
 	
 	public String getName() {

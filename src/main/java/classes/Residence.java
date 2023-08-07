@@ -8,9 +8,8 @@ public class Residence {
 	private boolean availableParking;
 	private boolean elevatorAvailable;
 	
-	public Residence() {
-		
-	}
+	public Residence() {};
+	
 	public Residence(String name,String location,int numberFloors,int numberApartmentsFloor,boolean availableParking,boolean elevatorAvailable) {
 		this.name=name;
 		this.location=location;

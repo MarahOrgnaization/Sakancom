@@ -2,9 +2,9 @@ package classes;
 
 public class House {
 	private int id;
-	private Residence residenceObj;
-	private apartments apartmentsObj ;
-	private owners ownerObj ;
+	public Residence residenceObj;
+	public apartments apartmentsObj ;
+	public owners ownerObj ;
 	private boolean availabilityStatus;
 
 	public House() {}
@@ -21,32 +21,10 @@ public class House {
 	public void setId(int newId) {
 		id = newId;
 	}
-	public Residence getResidenceObj() {
-		return residenceObj;
-	}
-	public void setResidenceObj(Residence newResidenceObj) {
-		residenceObj = newResidenceObj;
-	}
-	public apartments getApartmentsObj() {
-		return apartmentsObj;
-	}
-	public void setApartmentsObj(apartments newApartmentsObj) {
-		apartmentsObj = newApartmentsObj;
-	}
-	public owners getOwnerObj() {
-		return ownerObj;
-	}
-	public void setOwnerObj(owners newOwnerObj) {
-		ownerObj = newOwnerObj;
-	}
 	public boolean getAvailabilityStatus() {
 		return availabilityStatus;
 	}
 	public void setAvailabilityStatus(boolean newAvailabilityStatus) {
 		availabilityStatus = newAvailabilityStatus;
 	}
-	
-	
-	
-	
 }

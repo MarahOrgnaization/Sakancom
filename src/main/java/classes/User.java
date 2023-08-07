@@ -5,6 +5,7 @@ public class User {
 	private String userName  ;
 			private String passWord ;
 			private String type ;
+			///I private String type = SET GET
 			public User(){}
 			public User (String userName , String pass , String typee) {
 			this.userName = userName;

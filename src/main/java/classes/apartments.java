@@ -15,24 +15,24 @@ public class apartments {
 	
 
 	public apartments() {}
-	public apartments(apartments objApartments) {
-		this.number=objApartments.getNumber();
-		this.whichFloor=objApartments.getWhichFloor();
-		this.monthlyFee=objApartments.getMonthlyFee();
-		this.numberPerson=objApartments.getNumberPerson();
-		this.space=objApartments.getSpace();
-		this.bedroomNumber=objApartments.getBedroomNumber();
-		this.bathroomsNumber=objApartments.getBathroomsNumber();
-		this.balconyNumber=objApartments.getBalconyNumber();
-		this.photo=objApartments.getPhoto();
-		this.freeInternet=objApartments.getFreeInternet();
-		this.feesIncludeWaterElectricity=objApartments.getFeesIncludeWaterElectricity();
+	public apartments(int number,int whichFloor,int monthlyFee,int numberPerson,String space,int bedroomNumber, int bathroomsNumber, int balconyNumber, String photo,boolean freeInternet,boolean feesIncludeWaterElectricity) {
+		this.number=number;
+		this.whichFloor=whichFloor;
+		this.monthlyFee=monthlyFee;
+		this.numberPerson=numberPerson;
+		this.space=space;
+		this.bedroomNumber=bedroomNumber;
+		this.bathroomsNumber=bathroomsNumber;
+		this.balconyNumber=balconyNumber;
+		this.photo=photo;
+		this.freeInternet=freeInternet;
+		this.feesIncludeWaterElectricity=feesIncludeWaterElectricity;
 	}
 	
 	public int getNumber() {
 		return number;
 	}
-	public void setNumber(int newNumber) {
+	public void SetNumber(int newNumber) {
 		number = newNumber;
 	}
 	public int getWhichFloor() {
