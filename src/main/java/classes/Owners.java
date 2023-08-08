@@ -25,8 +25,8 @@ public class Owners {
 	public String getPhoneNumber() {
 		return phoneNumber ;
 	}
-	public void SetPhoneNumber(String NewPhoneNumber) {
-		phoneNumber = NewPhoneNumber;
+	public void setPhoneNumber(String newPhoneNumber) {
+		phoneNumber = newPhoneNumber;
 	}
 		
 

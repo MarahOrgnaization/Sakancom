@@ -170,7 +170,7 @@ public class Main {
 			residenceObj.setElevatorAvailable(b);	
 			
 			logger.log(Level.INFO,"Enter your phone number to contact : ");
-			ownerOne.SetPhoneNumber(myInput.next());
+			ownerOne.setPhoneNumber(myInput.next());
 			
 			logger.log(Level.INFO,"Enter a picture of the apartment");
 			apartmentsObj.setPhoto(myInput.next());
@@ -204,8 +204,8 @@ public class Main {
 						
 						int num = myInput.nextInt();
 						logger.log(Level.INFO,"Enter the new value");
-						String new_value =  myInput.next();
-						modifyInformation(houseId,num,new_value);			 
+						String newValue =  myInput.next();
+						modifyInformation(houseId,num,newValue);			 
 						break;
 				 case 3:
 					 showHouse();
@@ -305,13 +305,13 @@ public class Main {
 						 break; 
 					 case 3:
 						 menu();
-						 int Num =myInput.nextInt();
-						 switch(Num) {
+						 int num =myInput.nextInt();
+						 switch(num) {
 						 case 1: 
 							 showTenant(username);
 							 break;
 						 case 2:
-							 ShowOwnerInformation(username);
+							 showOwnerInformation(username);
 							 break;		
 						 case 3:
 							 payment(username);
@@ -340,8 +340,8 @@ public class Main {
 							 Scanner inp = new Scanner(System.in);
 
 							 logger.log(Level.INFO,"Enter your Furniture to add  please");
-								String	Furniture = inp.next();
-								addFurniture(Furniture,username);
+								String	furniture = inp.next();
+								addFurniture(furniture,username);
 							 break;
 							 
 						 case 6 :
@@ -373,52 +373,52 @@ public class Main {
 			return true;
 		}
 
-		public static boolean modifyInformation(int houseId , int num , String new_value) {
+		public static boolean modifyInformation(int houseId , int num , String newValue) {
 			House houseOne = new House();
 			houseOne=arrayHouses.get(houseId-1);
 
 			switch (num) { 
 			case 1:
-				houseOne.getResidenceObj().setName(new_value);
+				houseOne.getResidenceObj().setName(newValue);
 				break;
 			case 2:
-				houseOne.getResidenceObj().setLocation(new_value);
+				houseOne.getResidenceObj().setLocation(newValue);
 				break;
 			case 3:
-				houseOne.getResidenceObj().setNumberFloors(Integer.parseInt(new_value));
+				houseOne.getResidenceObj().setNumberFloors(Integer.parseInt(newValue));
 				break;
 			case 4:
-				houseOne.getResidenceObj().setNumberApartmentsFloor(Integer.parseInt(new_value));
+				houseOne.getResidenceObj().setNumberApartmentsFloor(Integer.parseInt(newValue));
 				break;
 			case 5:
-				houseOne.getApartmentsObj().setNumber(Integer.parseInt(new_value));
+				houseOne.getApartmentsObj().setNumber(Integer.parseInt(newValue));
 				break;
 			case 6:
-				houseOne.getApartmentsObj().setWhichFloor(Integer.parseInt(new_value));
+				houseOne.getApartmentsObj().setWhichFloor(Integer.parseInt(newValue));
 				break;
 			case 7:
-				houseOne.getApartmentsObj().setNumberPerson(Integer.parseInt(new_value));
+				houseOne.getApartmentsObj().setNumberPerson(Integer.parseInt(newValue));
 				break;
 			case 8:
-				houseOne.getApartmentsObj().setSpace(new_value);
+				houseOne.getApartmentsObj().setSpace(newValue);
 				break;
 			case 9:
-				houseOne.getApartmentsObj().setWhichFloor(Integer.parseInt(new_value));
+				houseOne.getApartmentsObj().setWhichFloor(Integer.parseInt(newValue));
 				break;
 			case 10:
-				houseOne.getApartmentsObj().setFeesIncludeWaterElectricity(Boolean.parseBoolean(new_value));
+				houseOne.getApartmentsObj().setFeesIncludeWaterElectricity(Boolean.parseBoolean(newValue));
 				break;
 			case 11:
-				houseOne.getApartmentsObj().setFreeInternet(Boolean.parseBoolean(new_value));
+				houseOne.getApartmentsObj().setFreeInternet(Boolean.parseBoolean(newValue));
 				break;
 			case 12:
-				houseOne.getResidenceObj().setAvailableParking(Boolean.parseBoolean(new_value));
+				houseOne.getResidenceObj().setAvailableParking(Boolean.parseBoolean(newValue));
 				break;
 			case 13:
-				houseOne.getResidenceObj().setElevatorAvailable(Boolean.parseBoolean(new_value));
+				houseOne.getResidenceObj().setElevatorAvailable(Boolean.parseBoolean(newValue));
 				break;
 			case 14:
-				houseOne.getApartmentsObj().setPhoto(new_value);
+				houseOne.getApartmentsObj().setPhoto(newValue);
 				break;
 			 default: 
 				 logger.log(Level.INFO,ENTRYERROR);
@@ -632,10 +632,10 @@ public class Main {
 		
 		}
 		
-		public static Boolean addFurniture(String Furniture , String tenantName){
+		public static Boolean addFurniture(String furniture , String tenantName){
 			 for ( int i=0; i <getTenantList().size(); i++ ) {
 				 if (tenantName.equals(getTenantList().get(i).getName())){
-					 getTenantList().get(i).setFurniture(Furniture);
+					 getTenantList().get(i).setFurniture(furniture);
 					 logger.log(Level.INFO,"done");
 					 return true;
 				 }
@@ -739,15 +739,15 @@ public class Main {
 			logger.log(Level.INFO," 2- Informations about Owner and how to Contact ");
 			logger.log(Level.INFO," 3- the Rent and when to pay  ");
 }	
-		public static boolean ShowOwnerInformation(String username) {
-			int ID_House =0;
+		public static boolean showOwnerInformation(String username) {
+			int iDHouse =0;
 			for(int i=0 ; i< getIdAndTennantlist().size() ; i++) {
 				 if(getIdAndTennantlist().get(i).getTenants().equals(username) ) {
-					 ID_House=getIdAndTennantlist().get(i).gethousingId();
+					 iDHouse=getIdAndTennantlist().get(i).gethousingId();
 				 }
 			}
 			for (int i=0 ; i<advertisedHouses.size() ; i++){
-			if (advertisedHouses.get(i).getId()==ID_House) {
+			if (advertisedHouses.get(i).getId()==iDHouse) {
 
 				logger.log(Level.INFO," Owner name is  : " );
 				logger.log(Level.INFO,advertisedHouses.get(i).getOwnerObj().getName());

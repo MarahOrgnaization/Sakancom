@@ -5,7 +5,7 @@ public class Tenant {
 	 private String phone;
 	 private int age;
 	 private String major ;
-	 private boolean Student ;
+	 private boolean student ;
 	 private String furniture= null ;
 	 private String payDate;
 	 
@@ -26,15 +26,15 @@ public class Tenant {
 	}
 
 	private boolean paid=false;
-	public Tenant(String name, String phone, int age, String major, boolean Student,String PayDate) {
+	public Tenant(String name, String phone, int age, String major, boolean student,String payDate) {
 		super();
 		this.name = name;
 		this.phone = phone;
 		this.age = age;
 		this.major = major;
-		this.Student = Student;
+		this.student = student;
 		
-		this.payDate=PayDate;
+		this.payDate=payDate;
 	}
 	
 	public String getName() {
@@ -69,11 +69,11 @@ public class Tenant {
 	}
 	
 	public boolean getIsStudent() {
-		return Student;
+		return student;
 	}
 	
 	public void setIsStudent(boolean isStudent) {
-		Student = isStudent;
+		student = isStudent;
 	}
 	
 	public String getFurniture() {

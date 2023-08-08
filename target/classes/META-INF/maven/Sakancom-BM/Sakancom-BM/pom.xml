@@ -3,9 +3,19 @@
   <groupId>Sakancom-BM</groupId>
   <artifactId>Sakancom-BM</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-<dependencies>
+ 	<properties>
+		  
+<maven.compiler.source>8</maven.compiler.source>
 
+<maven.compiler.target>8</maven.compiler.target>
+
+<failOnMissingWebXml>false</failOnMissingWebXml>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <sonar.organization>sakancomproject</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
+
+<dependencies>
 	 <dependency>
 	<groupId>io.cucumber</groupId>
 	<artifactId>cucumber-java</artifactId>
@@ -22,8 +32,5 @@
 	<version>7.3.4</version>
 	<scope>test</scope>
 	</dependency>
-
-
 </dependencies>
-
 </project>

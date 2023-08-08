@@ -44,7 +44,7 @@ public class tenantControlPanel {
 
 	@Then("show information about owner")
 	public void show_information_about_owner() {
-		Residence Residence3 = new Residence("Hijjawi","Ramallah",4,4,true,true);
+		Residence residenceThree = new Residence("Hijjawi","Ramallah",4,4,true,true);
 		Apartments objApartments=new Apartments();
 		 
 	 	objApartments.setNumber(1);
@@ -60,15 +60,15 @@ public class tenantControlPanel {
 		objApartments.setFeesIncludeWaterElectricity(true);
 	 
 	 Owners ownerOne = new Owners("mayar","0569902837");
-	 House House3=new House(1,Residence3,objApartments,ownerOne,true);
-		 Main.addHouse(House3, "owner");
-		 Main.acceptAndReject("y",House3);
-		 assertTrue(Main.bookAccommodation(4,"mayar"));
+	 House houseThree=new House(1,residenceThree,objApartments,ownerOne,true);
+		 Main.addHouse(houseThree, "owner");
+		 Main.acceptAndReject("y",houseThree);
+		 assertTrue(Main.bookAccommodation(1,"mayar"));
 		 IdAndTennant IdAndTennant1=new IdAndTennant(4,"mayar");
 		 Main.getIdAndTennantlist().add(IdAndTennant1);
 		 IdAndTennant IdAndTennant2=new IdAndTennant(1,"osama");
 		 Main.getIdAndTennantlist().add(IdAndTennant2);
-		assertTrue(Main.ShowOwnerInformation("mayar"));
+		assertTrue(Main.showOwnerInformation("mayar"));
 	}
 
 	@When("the tenant want to show the rent")
@@ -78,7 +78,7 @@ public class tenantControlPanel {
 
 	@Then("show the rent and how to pay")
 	public void show_the_rent_and_how_to_pay() {
-		Residence Residence1 = new Residence("Hijjawi","Ramallah",4,4,true,true);
+		Residence residenceOne = new Residence("Hijjawi","Ramallah",4,4,true,true);
 		Apartments objApartments=new Apartments();
 		 
 	 	objApartments.setNumber(1);
@@ -94,12 +94,12 @@ public class tenantControlPanel {
 		objApartments.setFeesIncludeWaterElectricity(true);
 	 
 	 Owners ownerOne = new Owners("mayar","0569902837");
-	 House houseOne=new House(1,Residence1,objApartments,ownerOne,true);
+	 House houseOne=new House(1,residenceOne,objApartments,ownerOne,true);
 		 Main.addHouse(houseOne, "owner");
 		 Main.acceptAndReject("y",houseOne);
 		 Main.bookAccommodation(3,"mayar");
-		 IdAndTennant IdAndTennant1=new IdAndTennant(3,"mayar");
-		 Main.getIdAndTennantlist().add(IdAndTennant1);
+		 IdAndTennant IdAndTennantObj=new IdAndTennant(3,"mayar");
+		 Main.getIdAndTennantlist().add(IdAndTennantObj);
 		 Main.fullTenantList();
 		assertTrue(Main.paymentt("y","mayar"));
 	}
