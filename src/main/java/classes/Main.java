@@ -39,7 +39,7 @@ public class Main {
 	private static final String  LOCATION = " \n2-the location of the Residence : ";
 	private static final String  RESNAME = "1-name of Residence : ";
 	
-	public static void Main() {
+	public static void main(String[] args) {
 		 
 		 fullTenantList();
 		 
