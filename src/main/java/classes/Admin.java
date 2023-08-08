@@ -7,7 +7,7 @@ public class Admin {
 	private String password;
 	private String address;
 	private String phoneNumber;
-	ArrayList<House> arrayHouses = new ArrayList<House>();
+	
 	
 	public String getName() {
 		return name ;

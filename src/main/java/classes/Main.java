@@ -48,13 +48,13 @@ public class Main {
 		 username = myInput.next();
 		 logger.log(Level.INFO,"Enter your password please");
 		String pass = myInput.next();
-		String type = login(username);
+		String type = login(username,pass);
 		menuType(type);
 		}
-		 while (username.equals("exit"));
+		 while (!username.equals("exit"));
 	 }
  
-	 public static String login(String userName){
+	 public static String login(String userName , String pass){
 		 
 		 User firstUser= new User("marah", "123",ADMIN);
 		 User secondtUser= new User("bayan", "333", OWNER);
@@ -72,7 +72,8 @@ public class Main {
 		 
 		for (int i=0 ; i <users.size();i++) {
 			
-			if (users.get(i).getUserName().equals(userName)) {
+			if (users.get(i).getUserName().equals(userName) && users.get(i).getPass().equals(pass)) {
+				
 			if (users.get(i).getType().equals(ADMIN)) {
 				setUserType(ADMIN);
 		}
@@ -85,7 +86,8 @@ public class Main {
 			else {
 				setUserType("none");
 			}
-		}
+		
+			}
 		}
 	
 	return getUserType();
@@ -143,29 +145,28 @@ public class Main {
 			logger.log(Level.INFO,"Do the fees include electricity and water ? (y or n)");
 			String s = myInput.next();
 			boolean b=true ;
-			if(s.equals("y") && s.equals("Y")) { b=true;}
-			else if(s.equals("n") && s.equals("N")) { b=false;}
-			else { logger.log(Level.INFO,PAYATTENTIONMASS); }
+			if(s.equals("y") || s.equals("Y")) { b=true;}
+			else if(s.equals("n") || s.equals("N")) { b=false;}
 			apartmentsObj.setFeesIncludeWaterElectricity(b);
 
 			logger.log(Level.INFO,"Is there free internet service ? (y or n)");
 			s = myInput.next();
-			if(s.equals("y") && s.equals("Y")) { b=true;}
-			else if(s.equals("n") && s.equals("N")) { b=false;}
+			if(s.equals("y") || s.equals("Y")) { b=true;}
+			else if(s.equals("n") || s.equals("N")) { b=false;}
 			else { logger.log(Level.INFO,PAYATTENTIONMASS); }
 			apartmentsObj.setFreeInternet(b);
 			
 			logger.log(Level.INFO,"Is there a private car park for the building? (y or n)");
 			s = myInput.next();
-			if(s.equals("y") && s.equals("Y")) { b=true;}
-			else if(s.equals("n") && s.equals("N")) { b=false;}
+			if(s.equals("y") || s.equals("Y")) { b=true;}
+			else if(s.equals("n") || s.equals("N")) { b=false;}
 			else { logger.log(Level.INFO,PAYATTENTIONMASS); }
 			residenceObj.setAvailableParking(b);
 			
 			logger.log(Level.INFO,"Is elevator service available? (y or n)");
 			s = myInput.next();
-			if(s.equals("y") && s.equals("Y")) { b=true;}
-			else if(s.equals("n") && s.equals("N")) { b=false;}
+			if(s.equals("y") || s.equals("Y")) { b=true;}
+			else if(s.equals("n") || s.equals("N")) { b=false;}
 			else {logger.log(Level.INFO,PAYATTENTIONMASS); }
 			residenceObj.setElevatorAvailable(b);	
 			
@@ -291,7 +292,7 @@ public class Main {
 			 }	
 			 while(in!=5);
 		 }
-		 else {
+		 else if (type.equals(TENANT)) {
 			 do { 
 				 logger.log(Level.INFO," ((( tenants menu ))) : ");
 				 logger.log(Level.INFO,"1-view the available housing \n2- view pictures of housing and other information\n3-control panel\n4-book accommodation\n5-AddFurniture\n6- Show Furniture \n7-see the neighbours \n8- Exit");
